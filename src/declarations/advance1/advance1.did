@@ -1,0 +1,16 @@
+type View = 
+ record {
+   messages: vec text;
+   start_index: nat;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: View;
+ };
+service : {
+  append: (vec text) -> ();
+  test: () -> (nat);
+  test1: () -> (vec nat);
+  view: (nat, nat) -> (Result);
+}
